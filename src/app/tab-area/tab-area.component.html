@@ -1,50 +1,62 @@
-<header class="col-md-12">
-  <nav>
-    <div class="row">
-      <!-- navigation bar -->
-      <div class="col-md-8 col-sm-8 col-xs-4">
-        <ul class="tabs">
-          <li class="tab">
-            <a class="home-btn" href="#home">
-              <i class="fa fa-home" aria-hidden="true"></i>
-            </a>
+<header id="fh5co-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+      <!-- <h1>
+        <i class="sl-icon-energy"></i>
+        <a href="index.html">Lesser</a>
+      </h1> -->
+      <nav role="navigation" class="d-none d-md-block d-lg-block d-xl-block">
+        <ul>
+          <li>
+            <a class="active" href="index.html">Home</a>
           </li>
-          <li class="tab">
-            <a href="#resume">RESUME</a>
+          <li>
+            <a href="blog.html">Blog</a>
           </li>
-          <li class="tab">
-            <a href="#portfolio">PORTFOLIO</a>
+          <li>
+            <a href="portfolio.html">Portfolio</a>
           </li>
-          <li class="tab">
-            <a href="#blog">BLOG</a>
+          <li>
+            <a href="services.html">Services</a>
           </li>
-          <li class="tab">
-            <a href="#contact">CONTACT</a>
+          <li>
+            <a href="about.html">About</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
           </li>
         </ul>
-      </div>
-      <div class="col-md-4 col-sm-4 col-xs-8 dynamic">
-        <a href="mailto:hi@tavonline.net" class="pull-right site-btn icon hidden-xs">Hire Me
-          <i class="fa fa-paper-plane" aria-hidden="true"></i>
-        </a>
-        <div class="hamburger pull-right hidden-lg hidden-md">
-          <i class="fa fa-bars" aria-hidden="true"></i>
+      </nav>
+      <nav id="navigation" class="d-md-none d-lg-none d-xl-none">
+        <div class="hamburger hamburger--spin" [ngClass]='{ "is-active":toggleFlag}' (click)="toggleMenu()">
+          <div class=" hamburger-box ">
+            <div class="hamburger-inner "></div>
+          </div>
         </div>
-        <div class="hidden-md social-icons pull-right">
-          <a class="fb" href="#">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-          </a>
-          <a class="tw" href="#">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
-          <a class="ins" href="#">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-          </a>
-          <a class="dr" href="#">
-            <i class="fa fa-dribbble" aria-hidden="true"></i>
-          </a>
+
+        <div class="" [ngClass]='{ "showMenuContent":toggleFlag, "hideMenuContent":!toggleFlag}'>
+          <ul>
+            <li>
+              <a class="active" href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="blog.html">Blog</a>
+            </li>
+            <li>
+              <a href="portfolio.html">Portfolio</a>
+            </li>
+            <li>
+              <a href="services.html">Services</a>
+            </li>
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
         </div>
-      </div>
+      </nav>
     </div>
-  </nav>
+  </div>
 </header>

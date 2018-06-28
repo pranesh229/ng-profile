@@ -1,3 +1,4 @@
+@import '../../variables';
 .profile {
   background: #fff;
   border-radius: 6px;
@@ -63,7 +64,7 @@ ul.profile-information li {
 
 ul.profile-information li::before {
   content: '• ';
-  color: #ffb100;
+  color: $brand-primary;
 }
 
 ul.profile-information li p {
@@ -82,5 +83,5 @@ ul.profile-information li span {
 
 header nav,
 .site-btn {
-  background: #ffc500 !important;
+  background: $brand-primary !important;
 }

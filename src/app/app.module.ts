@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { ShortProfileComponent } from './short-profile/short-profile.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { TabAreaComponent } from './tab-area/tab-area.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 @NgModule({
   declarations: [AppComponent, ShortProfileComponent,
-    TabAreaComponent
+    TabAreaComponent,
+    AboutMeComponent
 ],
   imports: [BrowserModule, MatGridListModule],
   providers: [],

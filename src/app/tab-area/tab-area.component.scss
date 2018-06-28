@@ -1,114 +1,170 @@
-header nav {
-  background: #fff;
-  display: inline-block;
-  border-radius: 6px;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  height: 70px;
+@import '../../variables';
+@import '../../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
+a {
+  color: #1fb57b;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: #1fb57b;
+  outline: none;
+}
+
+h1 {
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'Playfair Display', Arial, serif;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+  letter-spacing: 1px;
+}
+
+::-webkit-selection {
+  color: #fff;
+  background: $brand-primary;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: $brand-primary;
+  ;
+}
+
+::selection {
+  color: #fff;
+  background: $brand-primary;
+  ;
+}
+
+#fh5co-header {
+  padding: 40px 0;
   width: 100%;
-  margin-bottom: 30px;
-  line-height: 70px;
-  box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
-  -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
-  -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
-}
-
-nav ul {
-  list-style: none;
-}
-
-header nav ul li {
-  float: left;
-}
-
-header nav {
-  line-height: 70px;
-}
-
-header nav {
-  background: #fff;
-  display: inline-block;
-  border-radius: 6px;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  height: 70px;
-  width: 100%;
-  margin-bottom: 30px;
-  line-height: 70px;
-  box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
-  -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
-  -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
-}
-
-li {
   margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  background: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-header nav ul li a {
-  font-size: 14px;
-  font-weight: bold;
-  color: #000;
-  padding: 0 10px;
-  line-height: 73px;
+#fh5co-header:after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  content: '';
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  #fh5co-header {
+    margin: 0px 0 0 0;
+  }
+}
+
+#fh5co-header .header-inner {
+  float: left;
+  width: 100%;
+}
+
+#fh5co-header h1 {
+  float: left;
+  padding: 0;
+  font-weight: 900;
+  font-size: 28px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+#fh5co-header h1 i {
+  color: #1fb57b;
+}
+
+#fh5co-header h1 a {
+  color: black;
+}
+
+#fh5co-header h1 a:hover,
+#fh5co-header h1 a:active,
+#fh5co-header h1 a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+#fh5co-header nav {
+  float: left;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {}
+
+#fh5co-header nav ul {
+  padding: 0;
+  margin: 0 0 0 0;
+}
+
+#fh5co-header nav ul li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -moz-inline-stack;
+  display: block;
+  zoom: 1;
+  *display: inline;
+}
+
+#fh5co-header nav ul li a {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  padding: 12px 15px;
+  position: relative;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#fh5co-header nav ul li a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+#fh5co-header nav ul li a.active,
+#fh5co-header nav ul li a:focus {
+  outline: none;
+  text-decoration: none;
+  color: white;
+  background: $brand-primary;
+  border: none;
   display: block;
 }
 
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  background: transparent;
-  text-decoration: none !important;
+.hideMenuContent,
+.showMenuContent {
+  position: absolute;
+  background: red;
+  width: 94%;
+  transition: all linear .3s;
 }
 
-.site-btn:hover,
-header nav a.home-btn:hover,
-.section-title span {
-  background-color: #ffb100 !important;
+.hideMenuContent {
+  height: 0px;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  background: transparent;
+.hideMenuContent ul {
+  visibility: hidden;
 }
 
-.tab.active a {
-  color: #ffb100;
+.showMenuContent {
+  height: 200px;
 }
 
-header nav a.home-btn i {
-  font-size: 21px;
+.showMenuContent ul {
+  display: block;
 }
 
-element {}
-
-.tab.active a,
-#blog-post .post-list ul li a,
-#blog-post .post-comment ul li .comment-content a {
-  color: #ffb100;
-}
-
-header nav a.home-btn {
-  background: #ffc500 !important;
-  color: #fff;
-  border-radius: 6px 0 0 6px;
-  -webkit-border-radius: 6px 0 0 6px;
-  -moz-border-radius: 6px 0 0 6px;
-  padding: 0px 24px;
-  float: left;
-  height: 70px;
-  line-height: 70px;
-  margin-right: 10px;
-  transition: all ease 0.4s;
-  line-height: 77px;
+@media only screen and (min-width:736px) {
+  #fh5co-header nav ul li {
+    display: inline-block;
+  }
 }

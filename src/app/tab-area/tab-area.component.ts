@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab-area.component.scss']
 })
 export class TabAreaComponent implements OnInit {
+  toggleFlag = false;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit() {}
+  toggleMenu() {
+    this.toggleFlag = !this.toggleFlag;
   }
-
 }
