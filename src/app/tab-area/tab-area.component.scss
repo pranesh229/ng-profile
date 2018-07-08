@@ -1,7 +1,7 @@
 @import '../../variables';
 @import '../../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
 a {
-  color: #1fb57b;
+  color: $brand-primary;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -10,7 +10,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #1fb57b;
+  color: $brand-primary;
   outline: none;
 }
 
@@ -23,18 +23,18 @@ h1 {
 }
 
 ::-webkit-selection {
-  color: #fff;
+  color: $brand-background;
   background: $brand-primary;
 }
 
 ::-moz-selection {
-  color: #fff;
+  color: $brand-background;
   background: $brand-primary;
   ;
 }
 
 ::selection {
-  color: #fff;
+  color: $brand-background;
   background: $brand-primary;
   ;
 }
@@ -56,10 +56,8 @@ h1 {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 768px) {
-  #fh5co-header {
-    margin: 0px 0 0 0;
-  }
+.hamburger {
+  padding: 0px;
 }
 
 #fh5co-header .header-inner {
@@ -78,7 +76,7 @@ h1 {
 }
 
 #fh5co-header h1 i {
-  color: #1fb57b;
+  color: $brand-primary;
 }
 
 #fh5co-header h1 a {
@@ -97,27 +95,25 @@ h1 {
   padding: 0;
 }
 
-@media screen and (max-width: 768px) {}
-
 #fh5co-header nav ul {
   padding: 0;
   margin: 0 0 0 0;
 }
 
 #fh5co-header nav ul li {
-  padding: 0;
+  padding: 20px;
+  height: 75px;
   margin: 0;
   list-style: none;
   display: -moz-inline-stack;
   display: block;
   zoom: 1;
-  *display: inline;
 }
 
 #fh5co-header nav ul li a {
   color: rgba(0, 0, 0, 0.5);
   font-size: 16px;
-  padding: 12px 15px;
+  padding: 4px 15px;
   position: relative;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
@@ -133,7 +129,7 @@ h1 {
 #fh5co-header nav ul li a:focus {
   outline: none;
   text-decoration: none;
-  color: white;
+  color: $brand-background;
   background: $brand-primary;
   border: none;
   display: block;
@@ -142,9 +138,12 @@ h1 {
 .hideMenuContent,
 .showMenuContent {
   position: absolute;
-  background: red;
-  width: 94%;
+  background: $brand-background;
+  z-index: 1;
   transition: all linear .3s;
+  height: 230px;
+  left: -15px;
+  right: -20px
 }
 
 .hideMenuContent {
@@ -155,10 +154,6 @@ h1 {
   visibility: hidden;
 }
 
-.showMenuContent {
-  height: 200px;
-}
-
 .showMenuContent ul {
   display: block;
 }
@@ -166,5 +161,10 @@ h1 {
 @media only screen and (min-width:736px) {
   #fh5co-header nav ul li {
     display: inline-block;
+    padding: 0;
+    height: 0px;
+  }
+  #fh5co-header {
+    margin: 0px 0 0 0;
   }
 }
