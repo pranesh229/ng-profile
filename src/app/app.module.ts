@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { TabAreaComponent } from './tab-area/tab-area.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SpecializationComponent } from './specialization/specialization.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,7 @@ import { SpecializationComponent } from './specialization/specialization.compone
     AboutMeComponent,
     SpecializationComponent
   ],
-  imports: [BrowserModule, MatGridListModule, MatCardModule],
+  imports: [BrowserModule, MatGridListModule, MatCardModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AboutMeService } from './../about-me/about-me.service';
 
 @Component({
   selector: 'app-specialization',
@@ -6,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./specialization.component.scss']
 })
 export class SpecializationComponent implements OnInit {
+  @Input() specializationObj: any;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

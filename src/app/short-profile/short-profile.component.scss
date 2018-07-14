@@ -57,7 +57,7 @@ ul.profile-information {
 }
 
 ul.profile-information li {
-  padding-left: 1em;
+  // padding-left: 1em;
   font-size: 16px;
   color: #787878;
 }
@@ -75,6 +75,7 @@ ul.profile-information li p {
 ul.profile-information li p a {
   text-decoration: inherit;
   color: #787878;
+  padding-left: 5px;
 }
 
 ul.profile-information li span {
@@ -84,4 +85,14 @@ ul.profile-information li span {
 header nav,
 .site-btn {
   background: $brand-primary !important;
+}
+
+p {
+  font-size: 17px;
+}
+
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 18px;
+  }
 }

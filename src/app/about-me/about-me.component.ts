@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AboutMeService } from './about-me.service';
 
 @Component({
   selector: 'app-about-me',
@@ -6,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent implements OnInit {
-  aboutMeContentURL =
-    'https://cdn.contentful.com/spaces/hgjyi5lurih3/entries?access_token=b3b3b518c7649017f733b6eaf64952902296ac159f37fc1a30223666fe1c9412';
-  constructor() {}
+  aboutMeDescription = '';
+  specializationObj: any;
+  constructor(private aboutMeService: AboutMeService) {}
 
-  ngOnInit() {}
-  getAboutMeDescription() {}
-  getSpecializationObj() {}
+  ngOnInit() {
+    this.aboutMeService.getAboutMeData().subscribe(response => {
+      this.getAboutMeDescription();
+      this.getSpecializationObj();
+    });
+  }
+  getAboutMeDescription() {
+    this.aboutMeDescription = this.aboutMeService.getAboutMeDescription();
+  }
+  getSpecializationObj() {
+    this.specializationObj = this.aboutMeService.getSpecializationArryObj();
+  }
 }
