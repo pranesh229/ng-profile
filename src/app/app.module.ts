@@ -16,13 +16,8 @@ import { RouterModule, Routes } from '@angular/router';
 const appRoutes: Routes = [
   { path: 'resume', component: ResumeComponent },
   {
-    path: 'aboutme',
-    component: AboutMeComponent
-  },
-  {
     path: '',
-    redirectTo: '/aboutme',
-    pathMatch: 'full'
+    component: AboutMeComponent
   },
   { path: '**', component: AboutMeComponent }
 ];
@@ -42,10 +37,10 @@ const appRoutes: Routes = [
     MatCardModule,
     HttpClientModule,
     MarkdownModule.forRoot(),
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    RouterModule.forRoot(appRoutes, {
+      enableTracing: true,
+      useHash: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShortProfileService } from './short-profile.service';
 
 @Component({
   selector: 'app-short-profile',
@@ -7,6 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShortProfileComponent implements OnInit {
   constructor() {}
-
+  resumePath = 'https://pranesh229.github.io/Pranesh_resume.pdf';
   ngOnInit() {}
 }

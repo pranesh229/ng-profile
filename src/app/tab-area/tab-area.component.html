@@ -5,23 +5,13 @@
       <nav role="navigation" class="d-none d-md-block d-lg-block d-xl-block">
         <ul>
           <li>
-            <a class="active" href="index.html">Home</a>
+            <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+              true}">Home</a>
           </li>
           <li>
-            <a routerLink="/resume">Resume</a>
+            <a routerLink="/resume" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+              true}">Resume</a>
           </li>
-          <!-- <li>
-            <a href="portfolio.html">Contact</a>
-          </li> -->
-          <!-- <li>
-            <a href="services.html">Services</a>
-          </li>
-          <li>
-            <a href="about.html">About</a>
-          </li>
-          <li>
-            <a href="contact.html">Contact</a>
-          </li> -->
         </ul>
       </nav>
       <!-- desktop view tab menu -->
@@ -35,23 +25,13 @@
         <div class="" [ngClass]='{ "showMenuContent":toggleFlag, "hideMenuContent":!toggleFlag}'>
           <ul>
             <li>
-              <a class="active" href="index.html">Home</a>
+              <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                true}">Home</a>
             </li>
             <li>
-              <a href="blog.html">Resume</a>
+              <a routerLink="/resume" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+                true}">Resume</a>
             </li>
-            <!-- <li>
-              <a href="portfolio.html">Contact</a>
-            </li> -->
-            <!-- <li>
-              <a href="services.html">Services</a>
-            </li>
-            <li>
-              <a href="about.html">About</a>
-            </li>
-            <li>
-              <a href="contact.html">Contact</a>
-            </li> -->
           </ul>
         </div>
       </nav>

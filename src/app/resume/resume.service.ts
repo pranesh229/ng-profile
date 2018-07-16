@@ -12,7 +12,7 @@ export class ResumeService {
     '?access_token=b3b3b518c7649017f733b6eaf64952902296ac159f37fc1a30223666fe1c9412';
   constructor(private http: HttpClient) {}
   getResume(): Observable<any> {
-    return this.http.get<string>(this.serviceURL).pipe(
+    return this.http.get<any>(this.serviceURL).pipe(
       map(response => {
         return response;
       }),
