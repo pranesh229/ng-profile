@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
@@ -27,6 +26,9 @@ export class AboutMeService {
   }
   getSpecializationArryObj(): Specialization[] {
     return this.aboutmeData.fields.specialization;
+  }
+  getSkills(): string {
+    return this.aboutmeData.fields.skills;
   }
 }
 
@@ -63,6 +65,7 @@ interface ContentType {
 interface Fields {
   description?: string;
   specialization?: Specialization[];
+  skills?: string;
 }
 
 interface Specialization {

@@ -9,12 +9,14 @@ import { AboutMeService } from './about-me.service';
 export class AboutMeComponent implements OnInit {
   aboutMeDescription = '';
   specializationObj: any;
+  skills = '';
   constructor(private aboutMeService: AboutMeService) {}
 
   ngOnInit() {
     this.aboutMeService.getAboutMeData().subscribe(response => {
       this.getAboutMeDescription();
       this.getSpecializationObj();
+      this.getSkills();
     });
   }
   getAboutMeDescription() {
@@ -22,5 +24,8 @@ export class AboutMeComponent implements OnInit {
   }
   getSpecializationObj() {
     this.specializationObj = this.aboutMeService.getSpecializationArryObj();
+  }
+  getSkills() {
+    this.skills = this.aboutMeService.getSkills();
   }
 }
