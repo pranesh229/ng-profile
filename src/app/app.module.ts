@@ -13,6 +13,8 @@ import { SkillsComponent } from './skills/skills.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { ResumeComponent } from './resume/resume.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 const appRoutes: Routes = [
   { path: 'resume', component: ResumeComponent },
   {
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {
       enableTracing: true,
       useHash: true
-    })
+    }),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

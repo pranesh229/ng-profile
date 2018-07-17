@@ -21,6 +21,7 @@
     "@angular/material": "^6.2.1",
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
+    "@angular/pwa": "^0.6.8",
     "@angular/router": "^6.0.0",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
@@ -28,7 +29,8 @@
     "hamburgers": "^0.9.3",
     "ngx-markdown": "^6.1.0",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "@angular/service-worker": "^6.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.1",
