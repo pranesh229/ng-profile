@@ -15,6 +15,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { FooterComponent } from './footer/footer.component';
 const appRoutes: Routes = [
   { path: 'resume', component: ResumeComponent },
   {
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     AboutMeComponent,
     SpecializationComponent,
     SkillsComponent,
-    ResumeComponent
+    ResumeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -40,10 +42,12 @@ const appRoutes: Routes = [
     HttpClientModule,
     MarkdownModule.forRoot(),
     RouterModule.forRoot(appRoutes, {
-      enableTracing: true,
+      enableTracing: false,
       useHash: true
     }),
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', {
+      enabled: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

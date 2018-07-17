@@ -26,11 +26,11 @@
           <ul>
             <li>
               <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
-                true}">Home</a>
+                true}" (click)="toggleMenu()">Home</a>
             </li>
             <li>
               <a routerLink="/resume" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
-                true}">Resume</a>
+                true}" (click)="toggleMenu()">Resume</a>
             </li>
           </ul>
         </div>
