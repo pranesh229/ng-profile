@@ -1,8 +1,20 @@
 language: node_js
 node_js:
-  - "iojs"
-  - "7"
-install:
-  - npm install
-build:
-  - ng build --prod
+  - "stable"
+cache:
+  directories:
+  - node_modules
+script:
+  - npm test
+  - npm run build
+after_success:
+  - MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
+  - git clone https://github.com/pranesh229/pranesh229.github.io.git
+  - cp -rf /dist/ pranesh229.github.io
+  - cd pranesh229.github.io
+  - git remote
+  - git config user.email pranesh229@gmail.com
+  - git config user.name pranesh22
+  - git add .
+  - git commit -m $TRAVIS_BUILD_NUMBER"
+  - git push "https://github.com/pranesh229/pranesh229.github.io.git" master > /dev/null 2>&1
