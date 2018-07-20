@@ -19,7 +19,7 @@
 }
 
 .profile-image img {
-  width: 350px;
+  width: 100%;
 }
 
 .profile-name {
@@ -59,7 +59,7 @@ ul.profile-information {
 ul.profile-information li {
   // padding-left: 1em;
   font-size: 16px;
-  color: #787878;
+  color: #555555;
 }
 
 ul.profile-information li::before {
@@ -74,7 +74,7 @@ ul.profile-information li p {
 
 ul.profile-information li p a {
   text-decoration: inherit;
-  color: #787878;
+  color: #555555;
   padding-left: 5px;
 }
 
