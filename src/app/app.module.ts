@@ -16,6 +16,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FooterComponent } from './footer/footer.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 const appRoutes: Routes = [
   { path: 'resume', component: ResumeComponent },
   {
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     MatCardModule,
     HttpClientModule,
     MarkdownModule.forRoot(),
+    LazyLoadImageModule,
     RouterModule.forRoot(appRoutes, {
       enableTracing: false,
       useHash: true

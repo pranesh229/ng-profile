@@ -14,7 +14,7 @@
               <mat-card class="specialization-card">
                 <mat-card-header>
                   <div mat-card-avatar>
-                    <img [src]="obj.imageURL" alt="" srcset="" class="specialization-card-image">
+                    <img [lazyLoad]="obj.imageURL" alt="" srcset="" class="specialization-card-image">
                   </div>
                   <mat-card-title>{{obj.title}}</mat-card-title>
                   <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
