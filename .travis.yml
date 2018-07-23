@@ -9,16 +9,10 @@ script:
   - npm run build
 after_success: |
   if [ -n "$GITHUB_API_KEY" ]; then
-    cd "$TRAVIS_BUILD_DIR"
-    # This generates a `web` directory containing the website.
-    make web
-    cd web
-    git init
-    git checkout -b master
+    cd dist
+    git remote rm origin
+    git remote add origin https://pranesh229:$GITHUB_API_KEY@github.com/pranesh229/pranesh229.github.io
     git add .
-    git -c user.name='travis' -c user.email='travis' commit -m init
-    # Make sure to make the output quiet, or else the API token will leak!
-    # This works because the API key can replace your password.
-    git push -f -q https://<me>:$GITHUB_API_KEY@github.com/pranesh229/pranesh229.github.io master &2>/dev/null
-    cd "$TRAVIS_BUILD_DIR"
+    git commit -m "Build Deployed"
+    git push origin
   fi
