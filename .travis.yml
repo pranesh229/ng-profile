@@ -15,5 +15,5 @@ after_success: |
     git remote add origin https://pranesh229:$GITHUB_API_KEY@github.com/pranesh229/pranesh229.github.io
     git add .
     git commit -m "Build Deployed"
-    git push origin master
+    git push -f origin master
   fi
