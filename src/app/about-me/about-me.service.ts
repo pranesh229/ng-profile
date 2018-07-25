@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { catchError, map, startWith } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
+import { LocalStorage } from '@ngx-pwa/local-storage';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,25 +11,33 @@ export class AboutMeService {
     'https://cdn.contentful.com/spaces/hgjyi5lurih3/environments/master/entries/557E2oqinYcsgIi4EegKaW' +
     '?access_token=b3b3b518c7649017f733b6eaf64952902296ac159f37fc1a30223666fe1c9412';
   aboutmeData;
-  constructor(private http: HttpClient) {}
-  getAboutMeData() {
-    if (localStorage['aboutmeData']) {
-      return of(JSON.parse(localStorage['aboutmeData'])).pipe(
-        map(response => {
-          this.aboutmeData = response;
-          return response;
-        })
-      );
-    } else {
+  constructor(private http: HttpClient, protected localStorage: LocalStorage) {}
+  getAboutMeData(): Observable<any> {
+    if (window.navigator.onLine) {
       return this.http.get<AboutMeObj>(this.serviceURL).pipe(
-        map(response => {
-          this.aboutmeData = response;
-          localStorage['aboutmeData'] = JSON.stringify(response);
-          return response;
+        map(resp => {
+          this.aboutmeData = resp;
+          this.localStorage.setItem('aboutmeData', resp).subscribe(() => {});
+          // localStorage['aboutmeData'] = JSON.stringify(response);
+          return resp;
         }),
         catchError(error => {
           console.log(error);
           return error;
+        })
+      );
+    } else {
+      return this.localStorage.getItem<AboutMeObj>('aboutmeData').pipe(
+        map(response => {
+          if (!response) {
+            console.log('no-data');
+          } else {
+            this.aboutmeData = response;
+          }
+        }),
+        catchError(er => {
+          console.log(er);
+          return er;
         })
       );
     }
