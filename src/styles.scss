@@ -6,7 +6,8 @@
 @import '../node_modules/font-awesome/scss/font-awesome';
 @import '../node_modules/bootstrap/scss/bootstrap';
 body {
-  font-family: Roboto, Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-display: swap;
   margin: 0;
   background: $brand-background;
 }
@@ -68,6 +69,7 @@ h2,
 h3 {
   color: rgba(0, 0, 0, 0.7);
   font-family: 'Playfair Display', Arial, serif;
+  font-display: swap;
   font-weight: 400;
   margin: 0 0 0px 0;
   letter-spacing: 1px;

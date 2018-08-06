@@ -99,13 +99,179 @@
       }
     }
 
+    .top30 {
+      margin-top: 30px;
+    }
+
+    .profile {
+      background: #fff;
+      border-radius: 6px;
+      -moz-border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -o-border-radius: 6px;
+      width: 100%;
+      display: inline-block;
+      box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
+      -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
+      -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.07);
+    }
+
+    .profile-image {
+      -webkit-clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+      clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+      margin-top: -40px;
+    }
+
+    .profile-image img {
+      width: 100%;
+    }
+
+    .profile-name {
+      line-height: 18px;
+      padding: 20px;
+    }
+
+    .profile .name {
+      font-size: 20px;
+      margin-top: 11px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .profile .site-btn {
+      margin: 18px auto 30px;
+      display: block;
+    }
+
+    .site-btn.icon {
+      text-align: left;
+      padding: 1px 6px 1px 19px;
+    }
+
+    .profile .job {
+      font-size: 13px;
+      color: #555555;
+    }
+
+    ul.profile-information {
+      list-style: none;
+      margin: 14px auto 30px;
+      line-height: 2;
+      padding-left: 15px;
+    }
+
+    ul.profile-information li {
+      font-size: 16px;
+      color: #555555;
+    }
+
+    ul.profile-information li::before {
+      content: '• ';
+      color: #1FB57B;
+    }
+
+    ul.profile-information li p {
+      display: inline;
+      padding-left: 5px;
+    }
+
+    ul.profile-information li p a {
+      text-decoration: inherit;
+      color: #555555;
+      padding-left: 5px;
+    }
+
+    ul.profile-information li span {
+      color: #000;
+    }
+
+    p {
+      font-size: 17px;
+    }
+
+
+
+    .site-btn {
+      background: #1FB57B !important;
+    }
+
+    .download-profile {
+      color: black;
+      width: 200px;
+      font-size: 16px;
+    }
+
+    @media screen and (min-width: 768px) {
+      p {
+        font-size: 18px;
+      }
+    }
+
   </style>
-  <div class="lds-facebook">
-    <div></div>
-    <div></div>
-    <div></div>
+
+  <div class="container top30">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
+        <div class="profile">
+          <div class="profile-name">
+            <h1 class="name">Pranesh</h1>
+            <span class="job">Front End Engineer</span>
+          </div>
+          <div class="profile-image">
+            <img src="./assets/images/common/profile_pic.jpg" alt="">
+          </div>
+
+          <ul class="profile-information">
+            <li>
+              <p>
+                <span>Name:</span> Pranesh Udumalpet Hanumanth</p>
+            </li>
+            <li>
+              <p>
+                <span>Birthday:</span> 4 March 1990</p>
+            </li>
+            <li>
+              <p>
+                <span>Job:</span> Technology Analyst At Infosys Ltd</p>
+            </li>
+            <li>
+              <p>
+                <span>Email:</span>
+                <a href="mailto:pranesh229@gmail.com">pranesh229@gmail.com </a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <span>Phone:</span>
+                <a href="tel:+1-510-759-9237">+1(510)-759-9237 </a>
+              </p>
+            </li>
+          </ul>
+          <div class="col-md-12">
+            <a href='https://pranesh229.github.io/Pranesh_resume.pdf' class="site-btn icon download-profile" target="_blank">Download Profile
+              <i class="fa fa-download" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
+        <div class="lds-facebook">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <app-root></app-root>
+
+        <!-- <router-outlet></router-outlet> -->
+
+      </div>
+      <!-- <app-footer></app-footer> -->
+    </div>
+
   </div>
-  <app-root></app-root>
+
+
 </body>
 
 </html>
