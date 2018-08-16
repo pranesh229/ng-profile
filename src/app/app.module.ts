@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ShortProfileComponent } from './short-profile/short-profile.component';
+// import { ShortProfileComponent } from './short-profile/short-profile.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { TabAreaComponent } from './tab-area/tab-area.component';
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ShortProfileComponent,
+    // ShortProfileComponent,
     TabAreaComponent,
     AboutMeComponent,
     SpecializationComponent,

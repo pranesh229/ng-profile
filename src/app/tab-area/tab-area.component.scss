@@ -82,7 +82,7 @@ h1 {
 }
 
 #fh5co-header h1 a {
-  color: black;
+  color: $brand-text;
 }
 
 #fh5co-header h1 a:hover,
@@ -113,7 +113,7 @@ h1 {
 }
 
 #fh5co-header nav ul li a {
-  color: rgba(0, 0, 0, 0.5);
+  color: $brand-text;
   font-size: 16px;
   padding: 4px 15px;
   position: relative;
@@ -124,14 +124,14 @@ h1 {
 
 #fh5co-header nav ul li a:hover {
   text-decoration: none;
-  color: black;
+  color: $brand-text;
 }
 
 #fh5co-header nav ul li a.active,
 #fh5co-header nav ul li a:focus {
   outline: none;
   text-decoration: none;
-  color: $brand-background;
+  color: $brand-text;
   background: $brand-primary;
   border: none;
   display: block;

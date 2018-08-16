@@ -193,12 +193,38 @@
 
     .site-btn {
       background: #1FB57B !important;
+      font-size: 14px;
+      font-weight: 500;
+      border: 0;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      padding: 1px 29px;
+      line-height: 35px;
+    }
+
+    .site-btn.icon div {
+      color: #000;
+      background: white;
+      border-radius: 50px;
+      height: 27px;
+      width: 27px;
+      float: right;
+      text-align: center;
+      line-height: 23px;
+      margin-top: 4px;
+    }
+
+    .site-btn.icon div img {
+      height: 16px;
+      width: 16px;
+      ;
     }
 
     .download-profile {
       color: black;
       width: 200px;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     @media screen and (min-width: 768px) {
@@ -245,7 +271,11 @@
           </ul>
           <div class="col-md-12">
             <a href='https://pranesh229.github.io/Pranesh_resume.pdf' class="site-btn icon download-profile" target="_blank">Download Profile
-              <i class="fa fa-download" aria-hidden="true"></i>
+              <div>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVQ4jWNgoCH4j4ZHDRhSBszCohmGZxFjADsDA8NxLJqPQeWIAlIMDAzPkTQ/h4rhBNj8acXAwPALiq0IqccVUOkMDAxpxFhIakjjNIBUTLkBAJ5xV7cX+h+GAAAAAElFTkSuQmCC"
+                  aria-hidden="true">
+              </div>
+
             </a>
           </div>
         </div>
