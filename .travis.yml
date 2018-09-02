@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+script:
+  - echo "npm test temporarily disabled"
+  - npm run build
+after_success: |
+  if [ -n "$GITHUB_API_KEY" ]; then
+    echo $GITHUB_API_KEY
+    cd dist
+    git remote rm origin
+    git remote add origin https://pranesh229:$GITHUB_API_KEY@github.com/pranesh229/pranesh229.github.io
+    git add .
+    git commit -m "Build Deployed"
+    git push -f origin master
+  fi
