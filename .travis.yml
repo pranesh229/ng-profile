@@ -12,6 +12,7 @@ after_success: |
     echo $GITHUB_API_KEY
     rm -r .git
     prod.sh
+    cd dist/ng-prod
     git init .
     git remote add origin https://pranesh229:$GITHUB_API_KEY@github.com/pranesh229/pranesh229.github.io
     git add .
