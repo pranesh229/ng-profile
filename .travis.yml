@@ -12,7 +12,8 @@ after_success: |
     echo $GITHUB_API_KEY
     cd dist/ng-profile
     git remote rm origin
-    git remote add origin https://pranesh229:$GITHUB_API_KEY@github.com/pranesh229/pranesh229.github.io
+    #git remote add origin https://pranesh229:$GITHUB_API_KEY@github.com/pranesh229/pranesh229.github.io
+    git remote add origin https://pranesh229:$GITHUB_API_KEY@github.com/pranesh229/test-travis-repo
     git add .
     git commit -m "Build Deployed"
     git push -f origin master
