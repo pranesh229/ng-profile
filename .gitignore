@@ -36,3 +36,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Dist Unwanted generated files
+/dist/ng-profile/script.*.js
+/dist/ng-profile/runtine.*.js
+/dist/ng-profile/polyfills.*.js
+/dist/ng-profile/main.*.js
