@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Inject, PLATFORM_ID, APP_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 // import { ShortProfileComponent } from './short-profile/short-profile.component';
@@ -17,6 +17,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FooterComponent } from './footer/footer.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { isPlatformBrowser } from '@angular/common';
 const appRoutes: Routes = [
   { path: 'resume', component: ResumeComponent },
   {
@@ -37,7 +38,7 @@ const appRoutes: Routes = [
     FooterComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'ng-profile' }),
     MatGridListModule,
     MatCardModule,
     HttpClientModule,
@@ -54,4 +55,14 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(APP_ID) private appId: string
+  ) {
+    const platform = isPlatformBrowser(platformId)
+      ? 'in the browser'
+      : 'on the server';
+    console.log(`Running ${platform} with appId=${appId}`);
+  }
+}

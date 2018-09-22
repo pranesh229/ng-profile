@@ -1,45 +1,55 @@
-import { Injectable } from '@angular/core';
-import { catchError, map } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-import { of, Observable } from 'rxjs';
-import { LocalStorage } from '@ngx-pwa/local-storage';
+import { Injectable, Inject, PLATFORM_ID } from "@angular/core";
+import { catchError, map } from "rxjs/operators";
+import { HttpClient } from "@angular/common/http";
+import { of, Observable } from "rxjs";
+import { LocalStorage } from "@ngx-pwa/local-storage";
+import { isPlatformBrowser } from "@angular/common";
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AboutMeService {
   serviceURL =
-    'https://cdn.contentful.com/spaces/hgjyi5lurih3/environments/master/entries/557E2oqinYcsgIi4EegKaW' +
-    '?access_token=b3b3b518c7649017f733b6eaf64952902296ac159f37fc1a30223666fe1c9412';
+    "https://cdn.contentful.com/spaces/hgjyi5lurih3/environments/master/entries/557E2oqinYcsgIi4EegKaW" +
+    "?access_token=b3b3b518c7649017f733b6eaf64952902296ac159f37fc1a30223666fe1c9412";
   aboutmeData;
-  constructor(private http: HttpClient, protected localStorage: LocalStorage) {}
+  isBrowser;
+  constructor(
+    private http: HttpClient,
+    protected localStorage: LocalStorage,
+    @Inject(PLATFORM_ID) private platformId
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
   getAboutMeData(): Observable<any> {
-    if (window.navigator.onLine) {
-      return this.http.get<AboutMeObj>(this.serviceURL).pipe(
-        map(resp => {
-          this.aboutmeData = resp;
-          this.localStorage.setItem('aboutmeData', resp).subscribe(() => {});
-          // localStorage['aboutmeData'] = JSON.stringify(response);
-          return resp;
-        }),
-        catchError(error => {
-          console.log(error);
-          return error;
-        })
-      );
-    } else {
-      return this.localStorage.getItem<AboutMeObj>('aboutmeData').pipe(
-        map(response => {
-          if (!response) {
-            console.log('no-data');
-          } else {
-            this.aboutmeData = response;
-          }
-        }),
-        catchError(er => {
-          console.log(er);
-          return er;
-        })
-      );
+    if (this.isBrowser) {
+      if (window.navigator.onLine) {
+        return this.http.get<AboutMeObj>(this.serviceURL).pipe(
+          map(resp => {
+            this.aboutmeData = resp;
+            this.localStorage.setItem("aboutmeData", resp).subscribe(() => {});
+            // localStorage['aboutmeData'] = JSON.stringify(response);
+            return resp;
+          }),
+          catchError(error => {
+            console.log(error);
+            return error;
+          })
+        );
+      } else {
+        return this.localStorage.getItem<AboutMeObj>("aboutmeData").pipe(
+          map(response => {
+            if (!response) {
+              console.log("no-data");
+            } else {
+              this.aboutmeData = response;
+            }
+          }),
+          catchError(er => {
+            console.log(er);
+            return er;
+          })
+        );
+      }
     }
   }
   getAboutMeDescription(): string {
