@@ -77,7 +77,7 @@ gulp.task("rmLines", function() {
     .src("./dist/ng-profile/index.html")
     .pipe(
       rmLines({
-        filters: ['^<script type="text/javascript" src="runtime']
+        filters: ['<script type="text/javascript" src="runtime']
       })
     )
     .pipe(gulp.dest("./dist/ng-profile"));
@@ -104,13 +104,13 @@ gulp.task(
   "prodbuild",
   gulp.series([
     "build",
+    "rmLines",
     "concat",
     "cleanRuntime",
     "cleanMain",
     "cleanPolyfills",
     "cleanScript",
     "assemble",
-    "rmLines",
     "cleanall",
     "cssasync"
   ]),
