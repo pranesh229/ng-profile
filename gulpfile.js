@@ -148,7 +148,7 @@ gulp.task("injectjs2", function() {
     .pipe(
       inject(gulp.src("./dist/ng-profile/all*.js", { read: false }), {
         transform: path => {
-          return `<script src="${path}" async ></script>`;
+          return `<script src="${path}" defer ></script>`;
         }
       })
     )
