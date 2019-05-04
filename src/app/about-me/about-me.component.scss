@@ -1,4 +1,4 @@
-@import '../../variables';
+@import "../../variables";
 ::-webkit-selection {
   color: $brand-background;
   background: $brand-primary;
@@ -76,7 +76,7 @@
 }
 
 .sidebar ul li {
-  font-family: 'Roboto', 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-display: swap;
   list-style: none;
   padding: 5px 0;
