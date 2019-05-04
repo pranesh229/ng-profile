@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "gulp prodbuild && gulp injectjs && gulp injectjs2 && gulp minifyhtml",
+    "build": "gulp prodbuild && gulp injectjs && gulp minifyhtml",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
