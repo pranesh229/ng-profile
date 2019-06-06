@@ -20,10 +20,10 @@ gulp.task("build", function(cb) {
 gulp.task("concat", function() {
   return gulp
     .src([
-      "./dist/ng-profile/runtime.*.js",
-      "./dist/ng-profile/polyfills.*.js",
+      "./dist/ng-profile/runtime-es2015.*.js",
+      "./dist/ng-profile/polyfills-es2015.*.js",
       "./dist/ng-profile/scripts.*.js",
-      "./dist/ng-profile/main.*.js"
+      "./dist/ng-profile/main-es2015.*.js"
     ])
     .pipe(concat("all.js"))
     .pipe(gulp.dest("./dist/ng-profile"));
@@ -36,14 +36,14 @@ gulp.task("assemble", function() {
     .pipe(gulp.dest("./dist/ng-profile/"));
 }); //
 gulp.task("cleanRuntime", function() {
-  return gulp.src("./dist/ng-profile/runtime.*.js").pipe(
+  return gulp.src("./dist/ng-profile/runtime-*.js").pipe(
     clean({
       force: true
     })
   );
 });
 gulp.task("cleanMain", function() {
-  return gulp.src("./dist/ng-profile/main.*.js").pipe(
+  return gulp.src("./dist/ng-profile/main-*.js").pipe(
     clean({
       force: true
     })
@@ -51,7 +51,7 @@ gulp.task("cleanMain", function() {
 });
 
 gulp.task("cleanPolyfills", function() {
-  return gulp.src("./dist/ng-profile/polyfills.*.js").pipe(
+  return gulp.src("./dist/ng-profile/polyfills-*.js").pipe(
     clean({
       force: true
     })
