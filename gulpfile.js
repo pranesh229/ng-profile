@@ -77,7 +77,7 @@ gulp.task("rmLines", function() {
     .src("./dist/ng-profile/index.html")
     .pipe(
       rmLines({
-        filters: ['<script type="text/javascript" src="runtime']
+        filters: ['<script src="runtime']
       })
     )
     .pipe(gulp.dest("./dist/ng-profile"));
