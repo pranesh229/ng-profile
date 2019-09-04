@@ -1,19 +1,21 @@
 <div id="fh5co-about-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 fh5co-heading">
+      <div tabindex="0" class="col-md-6 col-md-offset-3 fh5co-heading">
         <h2>About Me</h2>
-
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="about-inner">
-          <p *ngIf="aboutMeDescription!=''">{{aboutMeDescription}}</p>
+          <p *ngIf="aboutMeDescription != ''">{{ aboutMeDescription }}</p>
         </div>
       </div>
     </div>
-    <app-skills *ngIf="skills" [skills]=skills></app-skills>
-    <app-specialization *ngIf="specializationObj" [specializationObj]=specializationObj></app-specialization>
+    <app-skills *ngIf="skills" [skills]="skills"></app-skills>
+    <app-specialization
+      *ngIf="specializationObj"
+      [specializationObj]="specializationObj"
+    ></app-specialization>
   </div>
 </div>

@@ -1,20 +1,27 @@
 <div class="row">
-  <div class="col-md-offset-3 fh5co-heading">
+  <div tabindex="0" class="col-md-offset-3 fh5co-heading">
     <h2>Tools and Technologies</h2>
-
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
     <div class="about-inner">
       <div class="row">
-        <div class="col-md-6 col-xs-12 col-sm-12" *ngFor="let obj of specializationObj">
+        <div
+          class="col-md-6 col-xs-12 col-sm-12"
+          *ngFor="let obj of specializationObj"
+        >
           <mat-card class="specialization-card">
             <mat-card-header>
               <div mat-card-avatar>
-                <img [lazyLoad]="obj.imageURL+'?w=40&h=40'" alt="" srcset="" class="specialization-card-image">
+                <img
+                  [lazyLoad]="obj.imageURL + '?w=40&h=40'"
+                  alt=""
+                  srcset=""
+                  class="specialization-card-image"
+                />
               </div>
-              <mat-card-title flex="initial">{{obj.title}}</mat-card-title>
+              <mat-card-title flex="initial">{{ obj.title }}</mat-card-title>
               <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
             </mat-card-header>
             <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
@@ -29,7 +36,6 @@
             </mat-card-actions>
           </mat-card>
         </div>
-
       </div>
     </div>
   </div>
