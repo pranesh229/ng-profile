@@ -8,7 +8,5 @@ import { DOCUMENT } from '@angular/common';
 export class AppComponent {
   title = 'app';
   constructor(@Inject(DOCUMENT) private document) {
-    this.document.getElementsByClassName('lds-facebook')[0].style.display =
-      'none';
   }
 }
